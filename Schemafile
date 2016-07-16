@@ -1,0 +1,21 @@
+create_table "entries", force: :cascade do |t|
+  t.integer  "company_id", null: false
+  t.string   "title", limit: 512, default: "", null: false
+  t.string   "kind", limit: 32, null: false
+  t.string   "original_pdf", limit: 128, null: false
+  t.string   "xbrl", limit: 128
+  t.string   "pdf_digest", limit: 64
+  t.datetime "published_at", null: false
+  t.timestamps
+end
+
+add_index "entries", ["published_at"]
+add_index "entries", ["company_id", "published_at"]
+
+create_table "companies", force: :cascade do |t|
+  t.integer  "code", null: false
+  t.string   "name", limit: 128, null: false
+  t.timestamps
+end
+
+add_index "companies", ["code"], unique: true
