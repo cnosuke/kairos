@@ -33,6 +33,8 @@ gem 'hamlit'
 gem 'denv'
 gem 'ridgepole'
 gem 'revision_plate'
+gem 'tdnet-client'
+gem 'rest-client'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
