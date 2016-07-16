@@ -3,5 +3,6 @@ Rails.application.routes.draw do
 
   resources :entries do
     get :pdf
+    get :redirect_pdf
   end
 end
